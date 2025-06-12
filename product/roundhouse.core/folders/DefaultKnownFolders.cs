@@ -18,6 +18,7 @@ namespace roundhouse.folders
                                    MigrationsFolder permissions,
                                    MigrationsFolder before_migration,
                                    MigrationsFolder after_migration,
+                                   MigrationsFolder runLastAfterEverything,
                                    Folder change_drop
             )
         {
@@ -37,6 +38,7 @@ namespace roundhouse.folders
             this.change_drop = change_drop;
             this.before_migration = before_migration;
             this.after_migration = after_migration;
+            this.run_last_after_everything = runLastAfterEverything;
         }
 
         public MigrationsFolder alter_database { get; private set; }
@@ -54,6 +56,7 @@ namespace roundhouse.folders
         public MigrationsFolder permissions { get; private set; }
         public MigrationsFolder before_migration { get; private set; }
         public MigrationsFolder after_migration { get; private set; }
+        public MigrationsFolder run_last_after_everything { get; private set; }
 
         public Folder change_drop{get; private set;}
        

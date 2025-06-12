@@ -65,6 +65,10 @@ namespace roundhouse.tests
         {
             get { return get_migrationsfolder("after_migration"); }
         }
+        public MigrationsFolder run_last_after_everything
+        {
+            get { return get_migrationsfolder("run_last_after_everything"); }
+        }
         public Folder change_drop 
         {
             get { return get_migrationsfolder("change_drop"); }

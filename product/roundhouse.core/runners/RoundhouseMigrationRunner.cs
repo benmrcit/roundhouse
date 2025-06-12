@@ -166,6 +166,8 @@ namespace roundhouse.runners
                     log_and_traverse(known_folders.permissions, version_id, new_version, ConnectionType.Default);
                     run_out_side_of_transaction_folder(known_folders.after_migration, version_id, new_version);
 
+                    log_and_traverse(known_folders.run_last_after_everything, version_id, new_version, ConnectionType.Default);
+
                     Log.bound_to(this).log_an_info_event_containing(
                         "{0}{0}{1} v{2} has kicked your database ({3})! You are now at version {4}. All changes and backups can be found at \"{5}\".",
                         System.Environment.NewLine,

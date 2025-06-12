@@ -23,7 +23,8 @@ namespace roundhouse.infrastructure.app.builders
             MigrationsFolder permissions_folder = new DefaultMigrationsFolder(file_system, configuration_property_holder.SqlFilesDirectory, configuration_property_holder.PermissionsFolderName, false, true, "Permission");
             MigrationsFolder before_migration_folder = new DefaultMigrationsFolder(file_system, configuration_property_holder.SqlFilesDirectory, configuration_property_holder.BeforeMigrationFolderName, false, true, "BeforeMigration");
             MigrationsFolder after_migration_folder = new DefaultMigrationsFolder(file_system, configuration_property_holder.SqlFilesDirectory, configuration_property_holder.AfterMigrationFolderName, false, true, "AfterMigration");
-            
+            MigrationsFolder runLastAfterEverything_folder = new DefaultMigrationsFolder(file_system, configuration_property_holder.SqlFilesDirectory, configuration_property_holder.RunLastAfterEverythingFolderName, true, false, "Run Last After Everything");
+
 
             Folder change_drop_folder = new DefaultFolder(file_system, combine_items_into_one_path(file_system,
                                                                                                    configuration_property_holder.OutputPath,
@@ -46,7 +47,8 @@ namespace roundhouse.infrastructure.app.builders
                 runAfterOtherAnyTimeScripts_folder, 
                 permissions_folder, 
                 before_migration_folder, 
-                after_migration_folder, 
+                after_migration_folder,
+                runLastAfterEverything_folder,
                 change_drop_folder);
         }
 

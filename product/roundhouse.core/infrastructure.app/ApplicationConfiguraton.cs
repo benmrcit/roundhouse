@@ -1,15 +1,15 @@
+using log4net;
+using log4net.Core;
+using log4net.Repository;
+using Microsoft.Build.Framework;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using log4net;
-using Microsoft.Build.Framework;
-using log4net.Core;
-using log4net.Repository;
 using ILogger = Microsoft.Build.Framework.ILogger;
 
 namespace roundhouse.infrastructure.app
 {
-    using System.IO;
+    using Antlr.Runtime.Misc;
     using builders;
     using containers;
     using containers.custom;
@@ -24,6 +24,7 @@ namespace roundhouse.infrastructure.app
     using logging;
     using migrators;
     using resolvers;
+    using System.IO;
     using System.Linq;
 
     public static class ApplicationConfiguraton
@@ -97,6 +98,10 @@ namespace roundhouse.infrastructure.app
             if (string.IsNullOrEmpty(configuration_property_holder.PermissionsFolderName))
             {
                 configuration_property_holder.PermissionsFolderName = ApplicationParameters.default_permissions_folder_name;
+            }
+            if (string.IsNullOrEmpty(configuration_property_holder.RunLastAfterEverythingFolderName))
+            {
+                configuration_property_holder.RunLastAfterEverythingFolderName = ApplicationParameters.default_runLastAfterEverything_folder_name;
             }
             if (string.IsNullOrEmpty(configuration_property_holder.SchemaName))
             {

@@ -37,6 +37,7 @@ namespace roundhouse.infrastructure.app
         string PermissionsFolderName { get; set; }
         string BeforeMigrationFolderName { get; set; }
         string AfterMigrationFolderName { get; set; }
+        string RunLastAfterEverythingFolderName { get; set; }
         string SchemaName { get; set; }
         string VersionTableName { get; set; }
         string ScriptsRunTableName { get; set; }

@@ -43,6 +43,7 @@ namespace roundhouse.consoles
         public string PermissionsFolderName { get; set; }
         public string BeforeMigrationFolderName { get; set; }
         public string AfterMigrationFolderName { get; set; }
+        public string RunLastAfterEverythingFolderName { get; set; }
         public string SchemaName { get; set; }
         public string VersionTableName { get; set; }
         public string ScriptsRunTableName { get; set; }
@@ -130,6 +131,7 @@ namespace roundhouse.consoles
             tokens["RunAllAnyTimeScripts"] = RunAllAnyTimeScripts.to_string();
             tokens["RunBeforeUpFolderName"] = RunBeforeUpFolderName.to_string();
             tokens["RunFirstAfterUpFolderName"] = RunFirstAfterUpFolderName.to_string();
+            tokens["RunLastAfterEverythingFolderName"] = RunLastAfterEverythingFolderName.to_string();
             tokens["SchemaName"] = SchemaName.to_string();
             tokens["ScriptsRunErrorsTableName"] = ScriptsRunErrorsTableName.to_string();
             tokens["ScriptsRunTableName"] = ScriptsRunTableName.to_string();

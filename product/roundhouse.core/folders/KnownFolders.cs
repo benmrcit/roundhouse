@@ -17,6 +17,7 @@ namespace roundhouse.folders
         MigrationsFolder permissions { get; }
         MigrationsFolder before_migration { get; }
         MigrationsFolder after_migration { get; }
+        MigrationsFolder run_last_after_everything { get; }
         Folder change_drop { get; }
     }
 }
