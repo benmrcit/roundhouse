@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-
+cls
 $root = $PSScriptRoot;
 
 $CODEDROP="$($root)/code_drop";
@@ -9,6 +9,7 @@ $LOGDIR="$($CODEDROP)/log";
 $onAppVeyor = $("$($env:APPVEYOR)" -eq "True");
 
 Push-Location $root
+
 
 
 "`n"

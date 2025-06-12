@@ -46,6 +46,8 @@ namespace roundhouse.infrastructure
         public static readonly int default_restore_timeout = 900;
         public static readonly bool default_disable_output = false;
 
+        public static readonly string default_merged_assembly_name = "roundhouse";
+
         public static string get_merged_assembly_name()
         {
             string merged_assembly_name = "rh";

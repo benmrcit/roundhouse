@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks Condition="'$(TargetFramework)' == ''">netcoreapp3.1;net461</TargetFrameworks>
-    <TargetFramework Condition="'$(TargetFramework)' == ''">net461</TargetFramework>
+    <TargetFramework Condition="'$(TargetFramework)' == ''">netcoreapp3.1</TargetFramework>
     <CLSCompliant>true</CLSCompliant>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,15 +54,11 @@
   </ItemGroup>
     
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <PackageReference Include="Costura.Fody" Version="3.3.2" />
-    <PackageReference Include="Fody" Version="3.3.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
+	<PackageReference Include="Costura.Fody" Version="3.3.2" />
+	<PackageReference Include="Fody" Version="6.9.2">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
   </ItemGroup>
 
 
@@ -83,6 +79,7 @@
     <None Include="..\..\docs\logo\roundhouse.ico">
       <Link>roundhouse.ico</Link>
     </None>
+    <None Include="FodyWeavers.xsd" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="../../generated/MySql.Data/keywords.txt" Link="$(AssemblyName).keywords.txt">
